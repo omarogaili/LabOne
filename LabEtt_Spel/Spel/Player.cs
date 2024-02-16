@@ -7,7 +7,7 @@ public class Player : Characters
     //constructor for the class player from 
     public Player(string name, double vitality, int postionX, int postionY) : base(name, 1.1, vitality, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
     {
-        name = "😒"; //this the shape i want. 
+        name = "🤺"; //this the shape i want. 
         this.Name = name;
         vitality = 10;
         this.Vitality = vitality;
@@ -21,7 +21,7 @@ public class Player : Characters
     }
     public void MoveLeft()
     {
-        if (XPositions < Console.WindowWidth - 1)
+        if (XPositions > 0)
         {
             XPositions--;
             UpdateLocation();
@@ -29,7 +29,7 @@ public class Player : Characters
     }
     public void MoveRight()
     {
-        if (XPositions < Console.WindowWidth - 1)
+        if (XPositions < Console.WindowWidth - 30) //this value is important so the player can move outside of the window
         {
             XPositions++;
             UpdateLocation();
@@ -37,13 +37,7 @@ public class Player : Characters
     }
     public void MoveUp()
     {
-        if (YPosition < Console.WindowHeight - 1)
-        {
-            YPosition--;
-            UpdateLocation();
-        }
-        //go up when u are down
-        else if (YPosition > Console.WindowHeight - 2)
+        if (YPosition > 0)
         {
             YPosition--;
             UpdateLocation();
@@ -56,12 +50,6 @@ public class Player : Characters
             YPosition++;
             UpdateLocation();
         } 
-        // get down when u are up
-        else if (YPosition > Console.WindowHeight + 2)
-        {
-            YPosition--;
-            UpdateLocation();
-        }
     }
     private void UpdateLocation()
     {
@@ -77,7 +65,9 @@ public class Player : Characters
         List<string> speech = new List<string>(){
             "I'll Wack you up",
             "Are you sure about that",
-            "Welcome to me World!"
+            "Welcome to me World!",
+            "Jag heter Albin HINCZ"
+
             };
         Random randChat = new Random();
         int index = randChat.Next(speech.Count);
