@@ -35,7 +35,9 @@ internal class Program
                     if (option == 1)
                     {
                         Player player= new Player ("",2,4,10);
+                        Mechanism mechanism= new Mechanism("🔥", player);
                         // player.ShowingTheCreatures();
+                        
                         bool isDead= false;
                         while(!isDead){
                             var key= Console.ReadKey(true).Key;
@@ -55,6 +57,10 @@ internal class Program
                             else if(key == ConsoleKey.Escape ){
                                 isDead=true;
                             }
+                            else if(key == ConsoleKey.Spacebar){
+                                mechanism.ShoweTheFire();
+                            }
+                            mechanism.Something();
                         }
                     }
                     else if (option == 2)

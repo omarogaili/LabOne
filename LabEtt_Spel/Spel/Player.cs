@@ -4,6 +4,7 @@ public class Player : Characters
 {
     public int XPositions { get; set; }
     public int YPosition { get; set; }
+    private Mechanism mechanism;
     //constructor for the class player from 
     public Player(string name, double vitality, int postionX, int postionY) : base(name, 1.1, vitality, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
     {
@@ -14,6 +15,7 @@ public class Player : Characters
         this.XPositions = postionX;
         this.YPosition = postionY;
         Console.Write(name);
+        // mechanism = new Mechanism ( XPositions +2, YPosition);
     }
     public override void ShowingTheCreatures()
     {
@@ -56,10 +58,10 @@ public class Player : Characters
         Console.Clear();
         Console.SetCursorPosition(XPositions, YPosition);
         Console.Write(Name);
-        string? chating = "";
-        Console.Write(" " + Communication(chating));
+        string? chatting = "";
+        Console.Write(" " + Communication(chatting));
     }
-    private string Communication(string chating)
+    private string Communication(string chatting)
     {
 
         List<string> speech = new List<string>(){
@@ -71,8 +73,8 @@ public class Player : Characters
             };
         Random randChat = new Random();
         int index = randChat.Next(speech.Count);
-        chating = speech[index];
-        return chating;
+        chatting = speech[index];
+        return chatting;
     }
     //to make the player coolness change,so what we need to do is 
     //create a new list this list should the player (user) choose from 
