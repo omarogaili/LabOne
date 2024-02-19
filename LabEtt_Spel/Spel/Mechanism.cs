@@ -2,7 +2,7 @@
 
 public class Mechanism
 {
-    private string? fire = "🔥";
+    private string fire = "🔥";
     private int xPosition;
     private int yPosition;
     private Player player;
@@ -32,13 +32,12 @@ public class Mechanism
 
     public void ShoweTheFire()
     {
-        this.PostionX=player.XPositions+2; //adding 2 steps at the positive x direction 
+        this.PostionX=player.XPositions+1; //adding 2 steps at the positive x direction 
         this.PostionY= player.YPosition;
         // ConsoleKeyInfo keyInfo;
         var key= Console.ReadKey(true).Key;
         while (key == ConsoleKey.Spacebar )
         {
-            
             Console.SetCursorPosition(xPosition +1 ,yPosition);
             PostionX++;
             Console.WriteLine(this.Fire);
@@ -69,7 +68,7 @@ public class Mechanism
             string a= "👿";
             int PostionX=0;
             int postionY=0;
-            Console.SetCursorPosition(PostionX+ 40, postionY+20);
+            Console.SetCursorPosition(PostionX+ 50, postionY+50);
             Console.WriteLine(a);
         }
 

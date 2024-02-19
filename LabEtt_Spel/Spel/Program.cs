@@ -35,23 +35,36 @@ internal class Program
                     if (option == 1)
                     {
                         Player player= new Player ("",2,4,10);
-                        Mechanism mechanism= new Mechanism("🔥", player);
-                        // player.ShowingTheCreatures();
+                        player.AddItems(new List<Items>
+                            {
+                                new Items("🌯", 30, 40,2),
+                                new Items("🦐", 30, 30,5),
+                                new Items("🍺", 30, 23, 10)
+                            });
+                            player.RangeUp();
                         
+                        Mechanism mechanism= new Mechanism("💀", player);
+                        // Characters characters= new Characters();
+                        // player.ShowingTheCreatures();
+
                         bool isDead= false;
                         while(!isDead){
+                            player.PlayerPropertyes();
+                            player.ShowingTheItems();
+                            player.RemovingItems();
+                            player.RangeUp();                          
                             var key= Console.ReadKey(true).Key;
-                            if(key == ConsoleKey.LeftArrow){
+                            if(key == ConsoleKey.LeftArrow || key== ConsoleKey.A){
                                 player.MoveLeft();
                             }
-                            else if(key == ConsoleKey.RightArrow)
+                            else if(key == ConsoleKey.RightArrow || key== ConsoleKey.D)
                             {
                                 player.MoveRight();
                             }
-                            else if(key == ConsoleKey.UpArrow){
+                            else if(key == ConsoleKey.UpArrow || key == ConsoleKey.W){
                                 player.MoveUp();
                             }
-                            else if(key == ConsoleKey.DownArrow){
+                            else if(key == ConsoleKey.DownArrow || key == ConsoleKey.S){
                                 player.MoveDown();
                             }
                             else if(key == ConsoleKey.Escape ){
@@ -85,15 +98,15 @@ internal class Program
         //     Console.WriteLine(mylist[i].userName + " " + mylist[i].userId);
         // }
     }
+    //Database method to save the user information in a list  
     static void SavingUser(List<User> mylist)
     {
-
         using (var _context = new ApplicationDb())
         {
             _context.Database.EnsureCreated();
             string? userIn = Console.ReadLine();
             var user = new User();
-            user.userName = userIn;
+            user.userName = userIn; 
             _context.users.Add(user);
             // _context.SaveChanges();
             List<User> allUsers = _context.users.ToList();// converting _context.users to a list
