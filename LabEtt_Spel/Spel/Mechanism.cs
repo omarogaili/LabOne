@@ -34,7 +34,7 @@ public class Mechanism
     {
         this.PostionX=player.XPositions+2; //adding 2 steps at the positive x direction 
         this.PostionY= player.YPosition;
-        ConsoleKeyInfo keyInfo;
+        // ConsoleKeyInfo keyInfo;
         var key= Console.ReadKey(true).Key;
         while (key == ConsoleKey.Spacebar )
         {
