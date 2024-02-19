@@ -58,23 +58,23 @@ public class Player : Characters
         Console.Clear();
         Console.SetCursorPosition(XPositions, YPosition);
         Console.Write(Name);
-        string? chatting = "";
-        Console.Write(" " + Communication(chatting));
+        Communication();
     }
-    private string Communication(string chatting)
+    private void Communication()
     {
-
+        int xaxis = XPositions;
+        int yaxis = this.YPosition +10;
         List<string> speech = new List<string>(){
             "I'll Wack you up",
             "Are you sure about that",
             "Welcome to me World!",
             "Jag heter Albin HINCZ"
-
             };
         Random randChat = new Random();
         int index = randChat.Next(speech.Count);
-        chatting = speech[index];
-        return chatting;
+        string chatting = speech[index];
+        Console.SetCursorPosition(xaxis, yaxis-12);
+        Console.WriteLine(chatting);
     }
     //to make the player coolness change,so what we need to do is 
     //create a new list this list should the player (user) choose from 

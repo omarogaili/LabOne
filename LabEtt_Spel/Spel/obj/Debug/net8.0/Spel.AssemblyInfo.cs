@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Spel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9233b060258463d8cdc16109abf676d8eae6de35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ab645cb84317c260a067ea0d8554cb6db053a1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Spel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Spel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

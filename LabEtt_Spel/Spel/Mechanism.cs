@@ -38,6 +38,7 @@ public class Mechanism
         var key= Console.ReadKey(true).Key;
         while (key == ConsoleKey.Spacebar )
         {
+            
             Console.SetCursorPosition(xPosition +1 ,yPosition);
             PostionX++;
             Console.WriteLine(this.Fire);
@@ -68,7 +69,7 @@ public class Mechanism
             string a= "👿";
             int PostionX=0;
             int postionY=0;
-            Console.SetCursorPosition(PostionX+ 50, postionY+50);
+            Console.SetCursorPosition(PostionX+ 40, postionY+20);
             Console.WriteLine(a);
         }
 
