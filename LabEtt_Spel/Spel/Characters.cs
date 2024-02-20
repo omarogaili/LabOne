@@ -93,6 +93,8 @@ public class Characters
     //or a value we kan also do that after every time you win a fight the 
     // max result and the min result grow with one point 
     // the method should look like this:
+
+    //Move it to monster classes
     public double GivingAValue(double theValue) 
     {
         int minValue= 1; // the min value 
@@ -114,6 +116,10 @@ public class Characters
        public virtual void ShowingTheCreatures()
     {
         Console.WriteLine(this.name + this.vitality);
+    }
+    public virtual void ShowingEasyMob()
+    {
+        Console.WriteLine(this.Name + this.Vitality);
     }
 }
 

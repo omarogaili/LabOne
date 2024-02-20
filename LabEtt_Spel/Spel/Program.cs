@@ -56,6 +56,8 @@ internal class Program
                                 isDead=true;
                             }
                         }
+                        EasyMob easyMob= new EasyMob ("",1,2,6);
+                        Console.Write(easyMob.Name);
                     }
                     else if (option == 2)
                     {

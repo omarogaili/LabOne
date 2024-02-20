@@ -15,6 +15,7 @@ public class Player : Characters
         this.YPosition = postionY;
         Console.Write(name);
     }
+
     public override void ShowingTheCreatures()
     {
         Console.WriteLine(this.Name + this.Vitality);
