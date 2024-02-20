@@ -35,6 +35,7 @@ internal class Program
                     if (option == 1)
                     {
                         Player player= new Player ("",2,4,10);
+                        Characters characters= new Characters("👽", 2, 10, 15, 10, 2, 3, 4, 5, 6, 7);
                         // player.ShowingTheCreatures();
                         bool isDead= false;
                         while(!isDead){
@@ -56,8 +57,11 @@ internal class Program
                                 isDead=true;
                             }
                         }
-                        EasyMob easyMob= new EasyMob ("",1,2,6);
-                        Console.Write(easyMob.Name);
+                            EasyMob easyMob= new EasyMob ("", 2, 10, 15);
+                            characters.AddItems(new List<EasyMob> {
+                                new Characters("👽", 2, 10, 15, 7, 8, 9, 10, 11, 12, 13),
+                            });
+                            
                     }
                     else if (option == 2)
                     {
