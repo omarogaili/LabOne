@@ -8,7 +8,7 @@ public class Items
     private int x;
     private int y;
     private int health;
-     Random rand =new Random();
+    //  Random rand =new Random();
 
     public Items(string item, int x, int y, int health){
         this.Item= item;

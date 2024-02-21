@@ -30,6 +30,15 @@ public class Mechanism
         set { yPosition = value; }
     }
 
+    /* this make a thread, so we can move the player at the same time we can move the player. because we have an While
+    loop in Showing fire method. 
+    */
+    public void Firing()
+{
+    Thread fireThread = new Thread(new ThreadStart(ShoweTheFire));
+    fireThread.Start();
+}
+
     public void ShoweTheFire()
     {
         this.PostionX=player.XPositions+1; //adding 2 steps at the positive x direction 
@@ -66,10 +75,24 @@ public class Mechanism
         }
         public void Something(){
             string a= "👿";
-            int PostionX=0;
+            List<string> mylist = new List<string>();
+            mylist.Add("👿");
+            mylist.Add("🦹");
+            int postionX=0;
             int postionY=0;
-            Console.SetCursorPosition(PostionX+ 50, postionY+50);
-            Console.WriteLine(a);
+            Random random = new Random();
+            Console.SetCursorPosition(postionX+ 50, postionY+50);
+            
+            for(int i=0; i<mylist.Count; i++)
+            {
+                Console.WriteLine(mylist[i]);
+                
+                if(this.PostionX == postionX && this.PostionY == postionY )
+            {
+                IsNextPositionEmpty(postionX);
+                mylist.Remove(mylist[i]);
+            }
+            }
         }
 
 }

@@ -14,6 +14,7 @@ internal class Program
         ConsoleKeyInfo keyInfo;// we'll use it for the switch statement by using the Key prop
         string? interactive = "☑️   \u001b[32m";
         (int left, int top) = Console.GetCursorPosition();
+        string shape = "*";
         while (!isSelected)
         {
             Console.SetCursorPosition(left, top);
@@ -34,47 +35,63 @@ internal class Program
                     isSelected = true;
                     if (option == 1)
                     {
-                        Player player= new Player ("",2,4,10);
+                        Player player = new Player("", 2, 4, 10);
                         player.AddItems(new List<Items>
                             {
                                 new Items("🌯", 30, 40,2),
                                 new Items("🦐", 30, 30,5),
                                 new Items("🍺", 30, 23, 10)
                             });
-                            player.RangeUp();
-                        
-                        Mechanism mechanism= new Mechanism("💀", player);
+                        player.RangeUp();
+
+                        Tree tree = new Tree(shape, ConsoleColor.Red, 10, 20);
+                        Nature nature = new Nature(shape, ConsoleColor.Red);
+
+
+
+                        Mechanism mechanism = new Mechanism("💀", player);
                         // Characters characters= new Characters();
                         // player.ShowingTheCreatures();
 
-                        bool isDead= false;
-                        while(!isDead){
+                        bool isDead = false;
+                        while (!isDead)
+                        {
+                            Tree tree1 = new Tree("*", ConsoleColor.Red,80, 12);
+                            tree1.MakeingNature();
                             player.PlayerPropertyes();
                             player.ShowingTheItems();
                             player.RemovingItems();
-                            player.RangeUp();                          
-                            var key= Console.ReadKey(true).Key;
-                            if(key == ConsoleKey.LeftArrow || key== ConsoleKey.A){
+                            player.RangeUp();
+                            var key = Console.ReadKey(true).Key;
+                            if (key == ConsoleKey.LeftArrow || key == ConsoleKey.A)
+                            {
                                 player.MoveLeft();
                             }
-                            else if(key == ConsoleKey.RightArrow || key== ConsoleKey.D)
+                            else if (key == ConsoleKey.RightArrow || key == ConsoleKey.D)
                             {
                                 player.MoveRight();
                             }
-                            else if(key == ConsoleKey.UpArrow || key == ConsoleKey.W){
+                            else if (key == ConsoleKey.UpArrow || key == ConsoleKey.W)
+                            {
                                 player.MoveUp();
                             }
-                            else if(key == ConsoleKey.DownArrow || key == ConsoleKey.S){
+                            else if (key == ConsoleKey.DownArrow || key == ConsoleKey.S)
+                            {
                                 player.MoveDown();
                             }
-                            else if(key == ConsoleKey.Escape ){
-                                isDead=true;
+                            else if (key == ConsoleKey.Escape)
+                            {
+                                isDead = true;
                             }
-                            else if(key == ConsoleKey.Spacebar){
-                                mechanism.ShoweTheFire();
+                            else if (key == ConsoleKey.Spacebar)
+                            {
+                                mechanism.Firing();
                             }
                             mechanism.Something();
+                            nature.ShowingTheItems();
                         }
+
+
                     }
                     else if (option == 2)
                     {
@@ -106,7 +123,7 @@ internal class Program
             _context.Database.EnsureCreated();
             string? userIn = Console.ReadLine();
             var user = new User();
-            user.userName = userIn; 
+            user.userName = userIn;
             _context.users.Add(user);
             // _context.SaveChanges();
             List<User> allUsers = _context.users.ToList();// converting _context.users to a list
