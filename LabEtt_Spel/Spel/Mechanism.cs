@@ -6,6 +6,8 @@ public class Mechanism
     private int xPosition;
     private int yPosition;
     private Player player;
+
+    private EasyMob easymob;
     //constructor 
     public Mechanism(string fire, Player player)
     {
@@ -68,7 +70,7 @@ public class Mechanism
             string a= "👿";
             int PostionX=0;
             int postionY=0;
-            Console.SetCursorPosition(PostionX+ 50, postionY+50);
+            Console.SetCursorPosition(PostionX+ 20, postionY+20);
             Console.WriteLine(a);
         }
 
