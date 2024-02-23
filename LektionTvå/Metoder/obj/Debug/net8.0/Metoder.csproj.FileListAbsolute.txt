@@ -1,0 +1,15 @@
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\bin\Debug\net8.0\Metoder.exe
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\bin\Debug\net8.0\Metoder.deps.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\bin\Debug\net8.0\Metoder.runtimeconfig.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\bin\Debug\net8.0\Metoder.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\bin\Debug\net8.0\Metoder.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.AssemblyInfoInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.AssemblyInfo.cs
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.csproj.CoreCompileInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.sourcelink.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\refint\Metoder.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\Metoder.genruntimeconfig.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionTvå\Metoder\obj\Debug\net8.0\ref\Metoder.dll

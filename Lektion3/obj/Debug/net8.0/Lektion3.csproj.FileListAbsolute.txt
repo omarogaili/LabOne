@@ -1,0 +1,15 @@
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.AssemblyInfoInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.AssemblyInfo.cs
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.csproj.CoreCompileInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.sourcelink.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\bin\Debug\net8.0\Lektion3.exe
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\bin\Debug\net8.0\Lektion3.deps.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\bin\Debug\net8.0\Lektion3.runtimeconfig.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\bin\Debug\net8.0\Lektion3.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\bin\Debug\net8.0\Lektion3.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\refint\Lektion3.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\Lektion3.genruntimeconfig.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\lektion3\obj\Debug\net8.0\ref\Lektion3.dll

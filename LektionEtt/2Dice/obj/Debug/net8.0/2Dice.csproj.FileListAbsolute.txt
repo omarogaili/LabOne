@@ -1,0 +1,15 @@
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\bin\Debug\net8.0\2Dice.exe
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\bin\Debug\net8.0\2Dice.deps.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\bin\Debug\net8.0\2Dice.runtimeconfig.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\bin\Debug\net8.0\2Dice.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\bin\Debug\net8.0\2Dice.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.AssemblyInfoInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.AssemblyInfo.cs
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.csproj.CoreCompileInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.sourcelink.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\refint\2Dice.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\2Dice.genruntimeconfig.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionEtt\2Dice\obj\Debug\net8.0\ref\2Dice.dll

@@ -1,0 +1,15 @@
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\bin\Debug\net8.0\Pokemon.exe
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\bin\Debug\net8.0\Pokemon.deps.json
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\bin\Debug\net8.0\Pokemon.runtimeconfig.json
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\bin\Debug\net8.0\Pokemon.dll
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\bin\Debug\net8.0\Pokemon.pdb
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.AssemblyInfoInputs.cache
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.AssemblyInfo.cs
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.csproj.CoreCompileInputs.cache
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.sourcelink.json
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.dll
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\refint\Pokemon.dll
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.pdb
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\Pokemon.genruntimeconfig.cache
+C:\Users\ogail\OneDrive\Desktop\Högskolan-grund programering\C#Fördjupning\pokemon\obj\Debug\net8.0\ref\Pokemon.dll

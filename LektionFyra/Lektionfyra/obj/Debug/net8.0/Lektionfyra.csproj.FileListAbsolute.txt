@@ -1,0 +1,15 @@
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\bin\Debug\net8.0\Lektionfyra.exe
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\bin\Debug\net8.0\Lektionfyra.deps.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\bin\Debug\net8.0\Lektionfyra.runtimeconfig.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\bin\Debug\net8.0\Lektionfyra.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\bin\Debug\net8.0\Lektionfyra.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.AssemblyInfoInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.AssemblyInfo.cs
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.csproj.CoreCompileInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.sourcelink.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\refint\Lektionfyra.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\Lektionfyra.genruntimeconfig.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\LektionFyra\Lektionfyra\obj\Debug\net8.0\ref\Lektionfyra.dll

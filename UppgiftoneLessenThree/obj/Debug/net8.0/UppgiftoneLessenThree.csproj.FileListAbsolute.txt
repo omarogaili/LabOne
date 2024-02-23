@@ -1,0 +1,15 @@
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.AssemblyInfoInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.AssemblyInfo.cs
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.csproj.CoreCompileInputs.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.sourcelink.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\bin\Debug\net8.0\UppgiftoneLessenThree.exe
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\bin\Debug\net8.0\UppgiftoneLessenThree.deps.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\bin\Debug\net8.0\UppgiftoneLessenThree.runtimeconfig.json
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\bin\Debug\net8.0\UppgiftoneLessenThree.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\bin\Debug\net8.0\UppgiftoneLessenThree.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\refint\UppgiftoneLessenThree.dll
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.pdb
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\UppgiftoneLessenThree.genruntimeconfig.cache
+C:\Users\ogail\OneDrive\Desktop\GrundProgramering-Hög\C#Fördjupning\UppgiftoneLessenThree\obj\Debug\net8.0\ref\UppgiftoneLessenThree.dll
