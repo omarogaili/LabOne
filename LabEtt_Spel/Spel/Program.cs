@@ -11,7 +11,7 @@ internal class Program
         // EasyMob mob= new EasyMob("👽",10 ,10, 12, mechanism);
         List<User> mylist = new List<User>();//a list from the user class, because i need the users
         Console.Write("Regestera dig här: ");
-        SavingUser(mylist);     
+        // SavingUser(mylist);     
         bool isSelected = false; //bool to control the loop 
         int option = 1; // to check the options we'll have 3 options
         ConsoleKeyInfo keyInfo;// we'll use it for the switch statement by using the Key prop
@@ -74,27 +74,27 @@ internal class Program
             }
         }while (!isSelected);
     }
-    //Database method to save the user information in a list  
-    static void SavingUser(List<User> mylist)
-    {
-        using (var _context = new ApplicationDb())
-        {
-            _context.Database.EnsureCreated();
-            string? userIn = Console.ReadLine();
-            var user = new User();
-            user.userName = userIn; 
-            _context.users.Add(user);
-            // _context.SaveChanges();
-            List<User> allUsers = _context.users.ToList();// converting _context.users to a list
-            mylist.AddRange(allUsers); //than we save this list in the argument we have 
-            //why using AddRange? because in _context.Users we have more than one element in side the
-            //user table so we need to user AddRange method to save them all in once. like userName 
-            //and userId. 
-            // _context.Database.ExecuteSqlRaw("DELETE FROM users Where userId=1003");  
-            //this method
-            //used to delete one raw from a table. 
-        }
-    }
+    // Database method to save the user information in a list  
+    // static void SavingUser(List<User> mylist)
+    // {
+    //     using (var _context = new ApplicationDb())
+    //     {
+    //         _context.Database.EnsureCreated();
+    //         string? userIn = Console.ReadLine();
+    //         var user = new User();
+    //         user.userName = userIn; 
+    //         _context.users.Add(user);
+    //         _context.SaveChanges();
+    //         List<User> allUsers = _context.users.ToList();// converting _context.users to a list
+    //         mylist.AddRange(allUsers); //than we save this list in the argument we have 
+    //         why using AddRange? because in _context.Users we have more than one element in side the
+    //         user table so we need to user AddRange method to save them all in once. like userName 
+    //         and userId. 
+    //         _context.Database.ExecuteSqlRaw("DELETE FROM users Where userId=1003");  
+    //         this method
+    //         used to delete one raw from a table. 
+    //     }
+    // }
     static void ShowHighScore(List<User> users)
     {
         Console.Clear();
