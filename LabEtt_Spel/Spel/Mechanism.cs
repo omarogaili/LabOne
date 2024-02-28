@@ -73,26 +73,4 @@ public class Mechanism
         {
             return nextPosition >= 0 && nextPosition < Console.WindowWidth;
         }
-        public void Something(){
-            string a= "👿";
-            List<string> mylist = new List<string>();
-            mylist.Add("👿");
-            mylist.Add("🦹");
-            int postionX=0;
-            int postionY=0;
-            Random random = new Random();
-            Console.SetCursorPosition(postionX+ 50, postionY+50);
-            
-            for(int i=0; i<mylist.Count; i++)
-            {
-                Console.WriteLine(mylist[i]);
-                
-                if(this.PostionX == postionX && this.PostionY == postionY )
-            {
-                IsNextPositionEmpty(postionX);
-                mylist.Remove(mylist[i]);
-            }
-            }
-        }
-
 }

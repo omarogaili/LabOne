@@ -43,16 +43,11 @@ internal class Program
                                 new Items("🍺", 30, 23, 10)
                             });
                         player.RangeUp();
-
                         Tree tree = new Tree(shape, ConsoleColor.Red, 10, 20);
                         Nature nature = new Nature(shape, ConsoleColor.Red);
-
-
-
                         Mechanism mechanism = new Mechanism("💀", player);
                         // Characters characters= new Characters();
                         // player.ShowingTheCreatures();
-
                         bool isDead = false;
                         while (!isDead)
                         {
@@ -87,11 +82,8 @@ internal class Program
                             {
                                 mechanism.Firing();
                             }
-                            mechanism.Something();
                             nature.ShowingTheItems();
                         }
-
-
                     }
                     else if (option == 2)
                     {
