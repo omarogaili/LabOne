@@ -39,7 +39,7 @@ public int X
         easymob.AddRange(newEasymob);
     }
 
-    public void ShowingTheMobs()
+    public override void ShowingTheCreatures()
     {
         foreach (EasyMob easyMob in easymob)
         {

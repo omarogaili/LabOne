@@ -8,11 +8,8 @@ public class Tree : Nature
 
 public Tree(string shape,ConsoleColor prevColor, int x, int y) : base(shape,prevColor)
 {
-    this.Shape = shape;
     this.TreeX = x;
     this.TreeY = y;
-    this.PrevColor = prevColor;
-
 }
 public int TreeX
     {
@@ -24,7 +21,7 @@ public int TreeX
         get { return y; }
         set { y = value; }
     }
-    public void SetShape(string shape)
+    public override void DrawShape(string shape)
     {
         ConsoleColor prevcolor = Console.ForegroundColor;
         Console.ForegroundColor = ConsoleColor.Green;
@@ -38,7 +35,7 @@ public int TreeX
         }
         Console.ForegroundColor = prevcolor;
     }
-    public void MakeingNature()
+    public override void MakeingNature()
 { 
     int windowWidth = Console.WindowWidth;
     int windowHeight = Console.WindowHeight;
@@ -52,7 +49,7 @@ public int TreeX
         TreeX = adjustedX;
         string shape = "*";
         Console.SetCursorPosition(TreeX-6, TreeY);
-        SetShape(shape);
+        DrawShape(shape);
     }
 }
 }

@@ -2,7 +2,7 @@
 
 namespace Spel;
 
-public class Nature
+public abstract class Nature
 {
     /* in this class we define the nature of the game. so what i need to do
     in this class is: to give it a property. for example what the Color is?
@@ -12,37 +12,26 @@ public class Nature
     this stuff. 
     */
     private string? shape;
-    List<Tree> tre = new List<Tree>();// a list of tree 
+    List<Tree> tree = new List<Tree>();// a list of tree 
     ConsoleColor prevcolor = Console.ForegroundColor;
     // private int x;
     // private int y;
     public Nature(string shape, ConsoleColor prevColor)
     {
         this.shape = shape;
-        this.PrevColor = prevColor;
+        this.prevcolor = prevColor;
     }
     public string Shape
     {
         get { return shape; }
         set { shape = value; }
     }
-    public ConsoleColor PrevColor
-    {
-        get { return prevcolor; }
-        set { prevcolor = value; }
-    }
     //here i will print the shape and add it to the list i have every time u print the tree add it to my list 
-    public void AddIATree()
+    public abstract void DrawShape(string shape);
+    public void AddTree()
     {
-        Tree tree = new Tree(shape, PrevColor, 10, 2);
-        tre.Add(tree);
+        Tree tree = new Tree(shape, prevcolor, 10, 2);
+        tree.DrawShape(shape);
     }
-        public void ShowingTheItems()
-    {
-        foreach (Tree newtree in tre)
-        {
-            Console.SetCursorPosition(newtree.TreeX, newtree.TreeY);
-            Console.WriteLine(shape);
-        }
-    }
+    public abstract void MakeingNature();
 }

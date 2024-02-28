@@ -114,10 +114,7 @@ public abstract class Characters
         }
         return theValue;
     }
-       public virtual void ShowingTheCreatures()
-    {
-        Console.WriteLine(this.name + this.vitality);
-    }
+       public abstract void ShowingTheCreatures();
 }
 
 
