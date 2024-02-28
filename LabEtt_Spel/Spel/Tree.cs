@@ -38,17 +38,6 @@ public int TreeX
         }
         Console.ForegroundColor = prevcolor;
     }
-    // public void MakeingNature()
-    // { 
-    //     TreeX = Console.WindowWidth;
-    //     TreeY = Console.WindowHeight;
-    //     string shape = "*";
-    //     for (int i = 0; i < 3; i++)
-    //     {
-    //         Console.SetCursorPosition(TreeX-5, TreeY-7);
-    //         SetShape(shape);
-    //     }
-    // }
     public void MakeingNature()
 { 
     int windowWidth = Console.WindowWidth;
@@ -66,5 +55,4 @@ public int TreeX
         SetShape(shape);
     }
 }
-
 }
