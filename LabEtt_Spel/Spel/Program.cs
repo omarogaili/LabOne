@@ -1,14 +1,19 @@
 ﻿using System.Security;
-using Microsoft.EntityFrameworkCore;
+// using Microsoft.EntityFrameworkCore;
 using Spel;
 
 internal class Program
 {
+    
     private static void Main(string[] args)
     {
+         Player player= new Player ("",2,4,10);
+        Mechanism mechanism= new Mechanism("💀", player);
+        Mobs mobs= new Mobs("👽", 10, 10, 12,player);
+        // EasyMob mob= new EasyMob("👽",10 ,10, 12, mechanism);
         List<User> mylist = new List<User>();//a list from the user class, because i need the users
         Console.Write("Regestera dig här: ");
-        SavingUser(mylist);
+        // SavingUser(mylist);
         bool isSelected = false; //bool to control the loop 
         int option = 1; // to check the options we'll have 3 options
         ConsoleKeyInfo keyInfo;// we'll use it for the switch statement by using the Key prop
@@ -34,28 +39,65 @@ internal class Program
                     isSelected = true;
                     if (option == 1)
                     {
-                        Player player= new Player ("",2,4,10);
+                          
+                        //  mechanism.AddItems(new List<EasyMob>
+                        //     {
+                        //         new EasyMob("👽", 10, 15, 10),
+                        //         new EasyMob("👽", 10, 20, 10),
+                        //         new EasyMob("👽", 10, 10, 15)
+                        //     });
+
+                        mobs.AddMobs(new List<EasyMob>
+                            {
+                                new EasyMob("👽", 10, 15, 10),
+                                new EasyMob("🤡", 10, 20, 10),
+                                new EasyMob("👻", 10, 10, 15)
+                            });
+                       
+                        player.AddItems(new List<Items>
+                            {
+                                new Items("🌯", 10, 20,2),
+                                new Items("🦐", 15, 10,5),
+                                new Items("🍺", 12, 13, 10)
+                            });
+                            player.RangeUp();
+                        
+                      
+                        // Characters characters= new Characters();
                         // player.ShowingTheCreatures();
+
                         bool isDead= false;
                         while(!isDead){
+                            player.PlayerPropertyes();
+                            player.ShowingTheItems();
+                            mobs.ShowingTheMobs();
+                            mobs.RemovingMobs();
+                            player.RemovingItems();
+                            player.RangeUp();                          
                             var key= Console.ReadKey(true).Key;
-                            if(key == ConsoleKey.LeftArrow){
+                            if(key == ConsoleKey.LeftArrow || key== ConsoleKey.A){
                                 player.MoveLeft();
                             }
-                            else if(key == ConsoleKey.RightArrow)
+                            else if(key == ConsoleKey.RightArrow || key== ConsoleKey.D)
                             {
                                 player.MoveRight();
                             }
-                            else if(key == ConsoleKey.UpArrow){
+                            else if(key == ConsoleKey.UpArrow || key == ConsoleKey.W){
                                 player.MoveUp();
                             }
-                            else if(key == ConsoleKey.DownArrow){
+                            else if(key == ConsoleKey.DownArrow || key == ConsoleKey.S){
                                 player.MoveDown();
                             }
                             else if(key == ConsoleKey.Escape ){
                                 isDead=true;
                             }
+                            else if(key == ConsoleKey.Spacebar){
+                                mechanism.ShoweTheFire();
+                            }
+                             mechanism.Something();
+                            
                         }
+
                     }
                     else if (option == 2)
                     {
@@ -79,26 +121,26 @@ internal class Program
         //     Console.WriteLine(mylist[i].userName + " " + mylist[i].userId);
         // }
     }
-    static void SavingUser(List<User> mylist)
-    {
-
-        using (var _context = new ApplicationDb())
-        {
-            _context.Database.EnsureCreated();
-            string? userIn = Console.ReadLine();
-            var user = new User();
-            user.userName = userIn;
-            _context.users.Add(user);
-            // _context.SaveChanges();
-            List<User> allUsers = _context.users.ToList();// converting _context.users to a list
-            mylist.AddRange(allUsers); //than we save this list in the argument we have 
-            //why using AddRange? because in _context.Users we have more than one element in side the
-            //user table so we need to user AddRange method to save them all in once. like userName 
-            //and userId. 
-            // _context.Database.ExecuteSqlRaw("DELETE FROM users Where userId=1003");  
-            //this method
-            //used to delete one raw from a table. 
-        }
-    }
+    //Database method to save the user information in a list  
+    // static void SavingUser(List<User> mylist)
+    // {
+    //     using (var _context = new ApplicationDb())
+    //     {
+    //         _context.Database.EnsureCreated();
+    //         string? userIn = Console.ReadLine();
+    //         var user = new User();
+    //         user.userName = userIn; 
+    //         _context.users.Add(user);
+    //         // _context.SaveChanges();
+    //         List<User> allUsers = _context.users.ToList();// converting _context.users to a list
+    //         mylist.AddRange(allUsers); //than we save this list in the argument we have 
+    //         //why using AddRange? because in _context.Users we have more than one element in side the
+    //         //user table so we need to user AddRange method to save them all in once. like userName 
+    //         //and userId. 
+    //         // _context.Database.ExecuteSqlRaw("DELETE FROM users Where userId=1003");  
+    //         //this method
+    //         //used to delete one raw from a table. 
+    //     }
+    // }
 }
 

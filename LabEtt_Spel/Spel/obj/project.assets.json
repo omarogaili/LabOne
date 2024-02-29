@@ -3979,19 +3979,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ogail\\.nuget\\packages\\": {}
+    "C:\\Users\\Albin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ogail\\OneDrive\\Desktop\\Högskolan-grund programering\\C#Fördjupning\\LabEtt_Spel\\Spel\\Spel.csproj",
+      "projectUniqueName": "C:\\Users\\Albin\\Desktop\\C#\\LabOne\\LabEtt_Spel\\Spel\\Spel.csproj",
       "projectName": "Spel",
-      "projectPath": "C:\\Users\\ogail\\OneDrive\\Desktop\\Högskolan-grund programering\\C#Fördjupning\\LabEtt_Spel\\Spel\\Spel.csproj",
-      "packagesPath": "C:\\Users\\ogail\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ogail\\OneDrive\\Desktop\\Högskolan-grund programering\\C#Fördjupning\\LabEtt_Spel\\Spel\\obj\\",
+      "projectPath": "C:\\Users\\Albin\\Desktop\\C#\\LabOne\\LabEtt_Spel\\Spel\\Spel.csproj",
+      "packagesPath": "C:\\Users\\Albin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Albin\\Desktop\\C#\\LabOne\\LabEtt_Spel\\Spel\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ogail\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Albin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3999,6 +4004,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
