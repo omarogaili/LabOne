@@ -6,6 +6,8 @@ public class Mechanism
     private int xPosition;
     private int yPosition;
     private Player player;
+
+    private EasyMob easymob;
     //constructor 
     public Mechanism(string fire, Player player)
     {

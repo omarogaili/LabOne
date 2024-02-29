@@ -1,14 +1,19 @@
 ﻿using System.Security;
-using Microsoft.EntityFrameworkCore;
+// using Microsoft.EntityFrameworkCore;
 using Spel;
 
 internal class Program
 {
+    
     private static void Main(string[] args)
     {
+         Player player= new Player ("",2,4,10);
+        Mechanism mechanism= new Mechanism("💀", player);
+        Mobs mobs= new Mobs("👽", 10, 10, 12,player);
+        // EasyMob mob= new EasyMob("👽",10 ,10, 12, mechanism);
         List<User> mylist = new List<User>();//a list from the user class, because i need the users
         Console.Write("Regestera dig här: ");
-        SavingUser(mylist);
+        // SavingUser(mylist);
         bool isSelected = false; //bool to control the loop 
         int option = 1; // to check the options we'll have 3 options
         ConsoleKeyInfo keyInfo;// we'll use it for the switch statement by using the Key prop
@@ -35,17 +40,16 @@ internal class Program
                     isSelected = true;
                     if (option == 1)
                     {
-                        Player player = new Player("", 2, 4, 10);
+                        Player player= new Player ("",2,4,10);
                         player.AddItems(new List<Items>
                             {
-                                new Items("🌯", 30, 40,2),
-                                new Items("🦐", 30, 30,5),
-                                new Items("🍺", 30, 23, 10)
+                                new Items("🌯", 10, 20,2),
+                                new Items("🦐", 15, 10,5),
+                                new Items("🍺", 12, 13, 10)
                             });
-                        player.RangeUp();
-                        Tree tree = new Tree(shape, ConsoleColor.Red, 10, 20);
-                        Nature nature = new Nature(shape, ConsoleColor.Red);
-                        Mechanism mechanism = new Mechanism("💀", player);
+                            player.RangeUp();
+                        
+                        Mechanism mechanism= new Mechanism("💀", player);
                         // Characters characters= new Characters();
                         // player.ShowingTheCreatures();
                         bool isDead = false;
@@ -55,6 +59,8 @@ internal class Program
                             tree1.MakeingNature();
                             player.PlayerPropertyes();
                             player.ShowingTheItems();
+                            mobs.ShowingTheMobs();
+                            mobs.RemovingMobs();
                             player.RemovingItems();
                             player.RangeUp();
                             var key = Console.ReadKey(true).Key;
@@ -82,8 +88,9 @@ internal class Program
                             {
                                 mechanism.Firing();
                             }
-                            nature.ShowingTheItems();
+                            mechanism.Something();
                         }
+
                     }
                     else if (option == 2)
                     {
@@ -115,7 +122,7 @@ internal class Program
             _context.Database.EnsureCreated();
             string? userIn = Console.ReadLine();
             var user = new User();
-            user.userName = userIn;
+            user.userName = userIn; 
             _context.users.Add(user);
             // _context.SaveChanges();
             List<User> allUsers = _context.users.ToList();// converting _context.users to a list

@@ -1,4 +1,4 @@
-﻿using Microsoft.Identity.Client;
+﻿// using Microsoft.Identity.Client;
 
 namespace Spel;
 
@@ -67,7 +67,7 @@ public class Player : Characters
     private void Communication()
     {
         int xaxis = XPositions;
-        int yaxis = this.YPosition + 10;
+        int yaxis = this.YPosition +10;
         List<string> speech = new List<string>(){
             "I'll Wack you up",
             "Are you sure about that",
