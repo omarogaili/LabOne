@@ -40,7 +40,7 @@ internal class Program
                     isSelected = true;
                     if (option == 1)
                     {
-                        Player player= new Player ("",2,4,10);
+                        
                         player.AddItems(new List<Items>
                             {
                                 new Items("🌯", 10, 20,2),
@@ -48,8 +48,10 @@ internal class Program
                                 new Items("🍺", 12, 13, 10)
                             });
                             player.RangeUp();
-                        
-                        Mechanism mechanism= new Mechanism("💀", player);
+                        mobs.AddMobs(new List<EasyMob>
+                        {
+                            new EasyMob("💕", 10,15,10)
+                        });
                         // Characters characters= new Characters();
                         // player.ShowingTheCreatures();
                         bool isDead = false;
@@ -88,7 +90,7 @@ internal class Program
                             {
                                 mechanism.Firing();
                             }
-                            mechanism.Something();
+                            
                         }
 
                     }
