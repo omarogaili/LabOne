@@ -5,6 +5,7 @@ namespace Spel;
 public class Player : Characters
 {
     private List<Items> items = new List<Items>();
+    private Mechanism mechanism;
     private Random rand = new Random();
     public int XPositions { get; set; }
     public int YPosition { get; set; }
@@ -134,10 +135,9 @@ public class Player : Characters
                 break;
             }
         }
-        
-        //to make the player coolness change,so what we need to do is 
+    } 
+     //to make the player coolness change,so what we need to do is 
         //create a new list this list should the player (user) choose from 
         // when it's time to choose something (in the fight or in conversation) with the 
         //this method will be placed down here ||
-    }
 }
