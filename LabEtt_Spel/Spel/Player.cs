@@ -1,5 +1,7 @@
 ﻿// using Microsoft.Identity.Client;
 
+using System.Threading.Tasks.Dataflow;
+
 namespace Spel;
 
 public class Player : Characters
@@ -9,16 +11,19 @@ public class Player : Characters
     private Random rand = new Random();
     public int XPositions { get; set; }
     public int YPosition { get; set; }
+    public int XpPoints {get; set;}
     //constructor for the class player from 
-    public Player(string shape, double vitality, int postionX, int postionY) : base(shape, 1.1, vitality, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+    public Player(string shape, int vitality, int xpPoints, int postionX, int postionY) 
+    : base(shape, 1, vitality, 2, 3, 4, 5, 6, 7, 8, 9)
     {
         shape = "🤺"; //this the shape i want. 
         this.Name = shape;
         vitality = 10;
+        xpPoints=0;
         this.Vitality = vitality;
         this.XPositions = postionX;
         this.YPosition = postionY;
-        Console.Write(shape);
+        this.XPositions = xpPoints;
         // mechanism = new Mechanism ( XPositions +2, YPosition);
     }
     public override void ShowingTheCreatures()
@@ -85,9 +90,8 @@ public class Player : Characters
         int xaxis = 0;
         int yaxis = 0;
         Console.SetCursorPosition(xaxis, yaxis);
-        Console.WriteLine("Health" + ":" + this.Vitality);
+        Console.WriteLine("Health" + ":" + this.Vitality+ "\n"+ "XP :" + this.XpPoints);
         RangeUp();
-
     }
     public void AddItems(List<Items> newItems)
     {
@@ -102,10 +106,8 @@ public class Player : Characters
                 this.Vitality += item.Health;
                 /*add more prop lik coolness and strength */
                 /*the same logic we should use if the player ben hit or moved ner by the anime */
-            
                 break;
             }
-
         }
     }
     public void ShowingTheItems()
@@ -135,7 +137,17 @@ public class Player : Characters
                 break;
             }
         }
-    } 
+    }
+    public bool IsDead()
+    {
+        if(this.Vitality ==0)
+        {
+            Console.Clear();
+            Console.WriteLine("GAME OVER");
+            return true;
+        }
+        return false;
+    }
      //to make the player coolness change,so what we need to do is 
         //create a new list this list should the player (user) choose from 
         // when it's time to choose something (in the fight or in conversation) with the 

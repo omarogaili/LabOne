@@ -2,17 +2,21 @@
 
 namespace Spel;
 
-public class EasyMob
+public class EasyMob 
 {
     private string easymob;// shape of the enemy 
     private int x;
     private int y;
     private int health;
-    public EasyMob(string easymob, int x, int y, int health){
+    private int xpPoints;
+    private int damage;
+    public EasyMob(string easymob, int x, int y, int health, int xpPoints, int damage){
         this.easymob = easymob;
         this.EasyMobsX= x;
         this.EasyMobsY= y;
         this.Health= health;
+        this.XpPoints= xpPoints;
+        this.Damage = damage;
         /* add more prop if we want to, more items*/
     }
     public string Easymob{
@@ -31,7 +35,16 @@ public class EasyMob
        public int Health{
         get{return health;}
         set{health=value; }
-
+       }
+       public int XpPoints
+       {
+        get{return xpPoints;}
+        set{xpPoints=value; }
+       }
+       public int Damage
+       {
+        get{return damage;}
+        set{damage=value; }
        }
 //  public int XPositions { get; set; }
 //     public int YPosition { get; set; }

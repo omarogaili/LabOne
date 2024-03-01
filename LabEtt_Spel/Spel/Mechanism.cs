@@ -59,6 +59,18 @@ public class Mechanism
                 }
         }
         UpdateLocation();
+          while (key == ConsoleKey.B )
+        {
+            Console.SetCursorPosition(xPosition +1 ,yPosition);
+            PostionX--;
+            Console.WriteLine(this.Fire);
+            System.Threading.Thread.Sleep(100);
+                if (!IsNextPositionEmpty(xPosition - 1))
+                {
+                    break;
+                }
+        }
+        UpdateLocation();
     }
         private void UpdateLocation()
     {

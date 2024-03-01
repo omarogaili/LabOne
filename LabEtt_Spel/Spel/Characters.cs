@@ -3,24 +3,25 @@
 in this class we'll save all the properties that should all the creatures have in this game
 we'll have some rolls that we will use them latter for different creature types. 
 */
-public class Characters
+public abstract class Characters
 {
     string name ="";
-    double strength;
-    double vitality; //health
-    double patience; 
-    double coolness;
-    double stamina; 
-    double charisma;
-    double talkativeness;
-    double speed;
-    double wisdom;
-    double rationality;
+    int strength;
+    int vitality; //health
+    int patience; 
+    int coolness;
+    int stamina; 
+    int charisma;
+    int talkativeness;
+    int speed;
+    int wisdom;
+    int rationality;
     /*
     what we need to do here is to gave the creatures of typ 1 for exempel a value like 5
     and so for the player and the Boos. 
     */
-    public Characters (string name ,double strength, double vitality, double patience, double coolness,double stamina,double charisma,double talkativeness,double speed,double wisdom,double rationality )
+    public Characters (string name ,int strength, int vitality, int patience, int coolness
+    ,int stamina,int charisma,int talkativeness,int speed,int wisdom,int rationality )
     {
         this.Name =  name;
         this.Charisma = GivingAValue(charisma);
@@ -39,51 +40,51 @@ public class Characters
         get { return name; }
         set { name = value; }
     }
-    public double Strength
+    public int Strength
     {
         get { return strength; }
         set { strength = value; }
     }
-    public double Vitality{
+    public int Vitality{
         get{return vitality; }
         set {vitality = value; }
         }
-    public double Patience
+    public int Patience
     {
         get {return patience; }
         set { patience = value; }
     }
-    public double Coolness
+    public int Coolness
     {
         get {return coolness; }
         set { coolness = value; }
     }
-    public double Stamina
+    public int Stamina
     {
         get {return stamina; }
         set {stamina = value; }
     }
-    public double Charisma
+    public int Charisma
     {
         get {return charisma;}
         set {charisma = value; }
     }
-    public double Talkativeness
+    public int Talkativeness
     {
         get {return talkativeness; }
         set {talkativeness = value; }
     }
-    public double Speed
+    public int Speed
     {
         get {return speed; }
         set {speed = value; }
     }
-    public double Wisdom
+    public int Wisdom
     {
         get {return wisdom;}
         set { wisdom = value;}
     }
-    public double Rationality
+    public int Rationality
     {
         get{ return rationality;}
         set{ rationality = value;}
@@ -95,7 +96,7 @@ public class Characters
     // the method should look like this:
 
     //move it to monster classes 
-    public double GivingAValue(double theValue) 
+    public int GivingAValue(int theValue) 
     {
         int minValue= 1; // the min value 
         int maxValue= 10; // there is the max value
