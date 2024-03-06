@@ -8,6 +8,8 @@ public class Mechanism
     private Player player;
 
     private EasyMob easymob;
+
+    private MediumMobs mediumMobs;
     //constructor 
     public Mechanism(string fire, Player player)
     {

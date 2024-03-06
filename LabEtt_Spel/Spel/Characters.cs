@@ -115,6 +115,7 @@ public abstract class Characters
         return theValue;
     }
        public abstract void ShowingTheCreatures();
+       public abstract void ShowingTheMediumMobs();
 }
 
 

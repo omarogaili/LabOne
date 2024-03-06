@@ -35,6 +35,11 @@ public class Player : Characters
     {
         Console.WriteLine(this.Name + this.Vitality);
     }
+
+    public override void ShowingTheMediumMobs()
+    {
+        Console.WriteLine(this.Name + this.Vitality);
+    }
     public void MoveLeft()
     {
         if (XPositions > 0)

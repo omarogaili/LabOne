@@ -118,6 +118,12 @@ internal class Program
                                 new EasyMob("👻", 15, 27,5, 10,1),
                                 new EasyMob("👿", 12, 20, 10, 10,1)
                             });
+        mobs.AddMediumMobs(new List<MediumMobs>
+                            {
+                                new MediumMobs("👹", 10, 35,12,10,10),
+                                new MediumMobs("👺", 15, 27,5, 10,1),
+                                new MediumMobs("👾", 12, 20, 10, 10,1)
+                            });
         player.RangeUp();
         do
         {
@@ -126,7 +132,9 @@ internal class Program
             player.PlayerPropertyes();
             player.ShowingTheItems();
             mobs.ShowingTheCreatures();
+            mobs.ShowingTheMediumMobs();
             mobs.RemovingMobs();
+            mobs.RemovingMediumMobs();
             player.RemovingItems();
             var key = Console.ReadKey(true).Key;
             if (key == ConsoleKey.LeftArrow || key == ConsoleKey.A)
