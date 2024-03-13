@@ -21,11 +21,11 @@ public class Items
         get{return item;}
         set{item=value;}
     }
-    public int LocationX{
+    public  int LocationX{
         get{return x;}
         set{x=value;}
     }
-    public int LocationY{
+    public  int LocationY{
         get{return y;}
         set{y=value; }
     }

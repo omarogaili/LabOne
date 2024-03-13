@@ -9,11 +9,12 @@ public class Mobs : Characters
     private int x;
     private int y;
     List<EasyMob> easymob = new List<EasyMob>();
+    private Map map;
 
     List <MediumMobs> mediumMobs = new List<MediumMobs>();
     Random rand = new Random();
 
-    public Mobs(string name, int vitality, int x, int y,Player player, Mechanism mechanism) 
+    public Mobs(string name, int vitality, int x, int y,Player player, Mechanism mechanism,Map map ) 
     : base(name, 1, vitality, 2, 3, 4, 5, 6, 7, 8, 9)
     {
         name = "👽"; //this the shape i want. 
@@ -25,6 +26,7 @@ public class Mobs : Characters
         this.Y = y;
         this.player= player;
         this.mechanism= mechanism;
+        this.map= map;
     }
 public int X
     {
@@ -36,7 +38,7 @@ public int X
         get { return y; }
         set { y = value; }
     }
-     public void AddMobs(List<EasyMob> newEasymob)
+      public void AddMobs(List<EasyMob> newEasymob)
     {
         easymob.AddRange(newEasymob);
     }
@@ -62,18 +64,25 @@ public int X
             Console.WriteLine(mediumMob.MediumMob);
         }
     }
-        public void GetSomeDamage()
+    public void GetSomeDamage()
+{
+    foreach (EasyMob mob in easymob)
     {
-        foreach (EasyMob mob in easymob)
+        if (player.XPositions == mob.EasyMobsX && player.YPosition == mob.EasyMobsY)
         {
-            if (player.XPositions == mob.EasyMobsX && player.YPosition == mob.EasyMobsY)
+            if (player.Vitality <= mob.Damage)
             {
-                player.Vitality -= mob.Damage;
-                /*add more prop lik coolness and strength */
-                /*the same logic we should use if the player ben hit or moved ner by the anime */
+                player.Vitality = 0;
             }
+            else
+            {
+                player.Vitality -= mob.Damage; 
+            }
+            /*add more prop lik coolness and strength */
+            /*the same logic we should use if the player ben hit or moved ner by the anime */
         }
     }
+}
 
     public void GetSomeDamageFromMediumMobs(){
         foreach (MediumMobs mob in mediumMobs)
@@ -87,27 +96,51 @@ public int X
         }
     }
 
-     public void RemovingMobs()
+//    public void RemovingMobs(Map map)
+//     {
+//         for (int i =easymob.Count -1; i>=0; i--){
+//             EasyMob easyMob = easymob[i];
+//             if(mechanism.PostionX>= easyMob.EasyMobsX  &&  mechanism.PostionY ==easyMob.EasyMobsY 
+//             || player.XPositions == easyMob.EasyMobsX && player.YPosition == easyMob.EasyMobsY){
+//                 GetSomeDamage();
+//                 easymob.RemoveAt(i);
+//                 player.XpPoints += easyMob.XpPoints;
+//                 easyMob.EasyMobsX = rand.Next(map.Width -6);
+//                 easyMob.EasyMobsY = rand.Next(map.Height-5);                 
+//                 EasyMob newEasyMob = new EasyMob(easyMob.Easymob, easyMob.EasyMobsX, easyMob.EasyMobsY, 
+//                 easyMob.Health, easyMob.XpPoints, easyMob.Damage);
+//                 Console.SetCursorPosition(easyMob.EasyMobsX, easyMob.EasyMobsY);
+//                 List<EasyMob> newEasymob = new List<EasyMob> { easyMob };
+//                 AddMobs(newEasymob);
+//             }
+//         }
+//     }
+public void RemovingMobs(Map map)
+{
+    for (int i = easymob.Count - 1; i >= 0; i--)
     {
-        for (int i =easymob.Count -1; i>=0; i--){
-            EasyMob easyMob = easymob[i];
-            if(mechanism.PostionX>= easyMob.EasyMobsX  &&  mechanism.PostionY ==easyMob.EasyMobsY 
-            || player.XPositions == easyMob.EasyMobsX && player.YPosition == easyMob.EasyMobsY){
-                GetSomeDamage();
-                easymob.RemoveAt(i);
-                player.XpPoints += easyMob.XpPoints;
-                easyMob.EasyMobsX = rand.Next(Console.WindowWidth -4);
-                easyMob.EasyMobsY = rand.Next(Console.WindowHeight-3);                  
-                EasyMob newEasyMob = new EasyMob(easyMob.Easymob, easyMob.EasyMobsX, easyMob.EasyMobsY, 
+        EasyMob easyMob = easymob[i];
+        if (mechanism.PostionX >= easyMob.EasyMobsX && mechanism.PostionY == easyMob.EasyMobsY
+            || player.XPositions == easyMob.EasyMobsX && player.YPosition == easyMob.EasyMobsY)
+        {
+            GetSomeDamage();
+            easymob.RemoveAt(i);
+            player.XpPoints += easyMob.XpPoints;
+
+            // Generera en ny position inom kartans gränser
+            easyMob.EasyMobsX = rand.Next(1, map.Width - 6);
+            easyMob.EasyMobsY = rand.Next(1, map.Height - 5);
+
+            EasyMob newEasyMob = new EasyMob(easyMob.Easymob, easyMob.EasyMobsX, easyMob.EasyMobsY,
                 easyMob.Health, easyMob.XpPoints, easyMob.Damage);
-                Console.SetCursorPosition(easyMob.EasyMobsX, easyMob.EasyMobsY);
-                List<EasyMob> newEasymob = new List<EasyMob> { easyMob };
-                AddMobs(newEasymob);
-            }
+            Console.SetCursorPosition(easyMob.EasyMobsX, easyMob.EasyMobsY);
+            List<EasyMob> newEasymob = new List<EasyMob> { easyMob };
+            AddMobs(newEasymob);
         }
     }
+}
 
-    public void RemovingMediumMobs()
+    public void RemovingMediumMobs(Map map)
     {
         for (int i =mediumMobs.Count -1; i>=0; i--){
             MediumMobs mediumMob = mediumMobs[i];
@@ -116,8 +149,8 @@ public int X
                 GetSomeDamageFromMediumMobs();
                 mediumMobs.RemoveAt(i);
                 player.XpPoints += mediumMob.XpPoints;
-                mediumMob.MediumMobX = rand.Next(Console.WindowWidth -3);
-                mediumMob.MediumMobY = rand.Next(Console.WindowHeight-2);                  
+                mediumMob.MediumMobX = rand.Next(1,map.Width -6);
+                mediumMob.MediumMobY = rand.Next(1,map.Height-5);                  
                 MediumMobs newMediumMob = new MediumMobs(mediumMob.MediumMob, mediumMob.MediumMobX, mediumMob.MediumMobY, 
                 mediumMob.Health, mediumMob.XpPoints, mediumMob.Damage);
                 Console.SetCursorPosition(mediumMob.MediumMobX, mediumMob.MediumMobY);

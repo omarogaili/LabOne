@@ -9,26 +9,26 @@ public class Player : Characters
 {
     private List<Items> items = new List<Items>();
     private Mechanism mechanism;
+     Map map= new Map();
     private Random rand = new Random();
-    public int XPositions { get; set; }
+    public  int XPositions { get; set; }
     public int YPosition { get; set; }
     public int XpPoints {get; set;}
     int initialX;
     int initialY;
     int initialHealth;
+
     //constructor for the class player from 
-    public Player(string shape, int vitality, int xpPoints, int postionX, int postionY) 
+    public Player(string shape, int vitality, int xpPoints, int postionX, int postionY, Map map) 
     : base(shape, 1, vitality, 2, 3, 4, 5, 6, 7, 8, 9)
     {
         shape = "🤺"; //this the shape i want. 
         this.Name = shape;
-        vitality = 10;
-        xpPoints=0;
         this.Vitality = vitality;
         this.XPositions = postionX;
         this.YPosition = postionY;
         this.XPositions = xpPoints;
-
+        this.map = map;
         // mechanism = new Mechanism ( XPositions +2, YPosition);
     }
     public override void ShowingTheCreatures()
@@ -40,46 +40,94 @@ public class Player : Characters
     {
         Console.WriteLine(this.Name + this.Vitality);
     }
-    public void MoveLeft()
+    public void MoveLeft(Map map)
     {
-        if (XPositions > 0)
-        {
-            XPositions--;
-            UpdateLocation();
-        }
-    }
-    public void MoveRight()
+        if (XPositions > 1)
     {
-        if (XPositions < Console.WindowWidth - 20) //this value is important so the player can move outside of the window
-        {
-            XPositions++;
-            UpdateLocation();
-        }
+        // Clear the player's current position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(' '); // ' ' represents an empty tile
+
+        // Update the player's position
+        XPositions--;
+
+        // Update the player's position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(Name);
     }
-    public void MoveUp()
+    }
+    // public void MoveRight()
+    // {
+        
+    //     if (XPositions < map.MapWidth) //this value is important so the player can move outside of the window
+    //     {
+    //         XPositions++;
+    //         UpdateLocation();
+    //     }
+    // }
+//     public void MoveRight(Map map)
+// {
+//     if (XPositions < map.MapWidth - 10) // sätta gräns så att spelaren kan inte komma närmare till gränsen
+//     {
+//         // ErasePreviousPosition();
+//         XPositions++;
+//         UpdateLocation();
+//     }
+// }
+
+public void MoveRight(Map map)
+{
+    if (XPositions < map.MapWidth - 4)
     {
-        if (YPosition > 2)
-        {
-            YPosition--;
-            UpdateLocation();
-        }
+        // Clear the player's current position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(' '); // ' ' represents an empty tile
+        // Update the player's position
+        XPositions++;
+        // Update the player's position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(Name);
     }
-    public void MoveDown()
+}
+
+    public void MoveUp(Map map)
     {
-        if (YPosition < Console.WindowHeight - 1)
-        {
-            YPosition++;
-            UpdateLocation();
-        }
+        if (YPosition > 1)
+    {
+        // Clear the player's current position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(' '); // ' ' represents an empty tile
+        // Update the player's position
+        YPosition--;
+        // Update the player's position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(Name);
     }
-    private void UpdateLocation()
+    }
+    public void MoveDown(Map map)
+    {
+        if (YPosition < map.MapHeight - 2)
+    {
+        // Clear the player's current position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(' '); // ' ' represents an empty tile
+
+        // Update the player's position
+        YPosition++;
+
+        // Update the player's position on the console
+        Console.SetCursorPosition(XPositions, YPosition);
+        Console.Write(Name);
+    }
+    }
+    private  void UpdateLocation()
     {
         Console.Clear();
         Console.SetCursorPosition(XPositions, YPosition);
         Console.Write(Name);
         Communication();
     }
-    private void Communication()
+    private  void Communication()
     {
         int xaxis = XPositions;
         int yaxis = this.YPosition +10;
@@ -95,10 +143,10 @@ public class Player : Characters
         Console.SetCursorPosition(xaxis, yaxis - 12);
         Console.WriteLine(chatting);
     }
-    public void PlayerPropertyes()
+    public  void PlayerPropertyes()
     {
-        int xaxis = 0;
-        int yaxis = 0;
+        int xaxis = Console.WindowWidth -20;
+        int yaxis = Console.WindowHeight -10;
         Console.SetCursorPosition(xaxis, yaxis);
         Console.WriteLine("Health" + ":" + this.Vitality+ "\n"+ "XP :" + this.XpPoints);
         RangeUp();
@@ -133,24 +181,44 @@ public class Player : Characters
     by using the SetCursorPosition() så we "write" the new place and than save it in a list and after that we send it 
     for Additem method to save it in the list and Write it. 
     */
-    public void RemovingItems()
+    // public void RemovingItems()
+    // {
+    //     foreach (Items item in items){
+    //         if(XPositions == item.LocationX && YPosition == item.LocationY){
+    //             items.Remove(item);
+    //             item.LocationX = rand.Next(map.Width);
+    //             item.LocationY = rand.Next(map.Height);
+    //             if(item.LocationX < map.Width&& item.LocationY < map.Height){               
+    //             Items newItem = new Items(item.Item, item.LocationX-7, item.LocationY-7, item.Health);
+    //             Console.SetCursorPosition(item.LocationX, item.LocationY);
+    //             List<Items> newItems = new List<Items> { newItem };
+    //             AddItems(newItems);
+    //             break;
+    //             }  
+    //         }
+    //     }
+    // }
+
+    public void RemovingItems(Map map)
+{
+    for (int i = items.Count - 1; i >= 0; i--)
     {
-        foreach (Items item in items){
-            if(XPositions == item.LocationX && YPosition == item.LocationY){
-                items.Remove(item);
-                item.LocationX = rand.Next(Console.WindowWidth);
-                item.LocationY = rand.Next(Console.WindowHeight);                  
-                Items newItem = new Items(item.Item, item.LocationX, item.LocationY, item.Health);
-                Console.SetCursorPosition(item.LocationX, item.LocationY);
-                List<Items> newItems = new List<Items> { newItem };
-                AddItems(newItems);
-                break;
-            }
+        Items item = items[i];
+        if (XPositions == item.LocationX && YPosition == item.LocationY)
+        {
+            items.RemoveAt(i);
+            item.LocationX = rand.Next(1,map.Width-6);
+            item.LocationY = rand.Next(1,map.Height-5);//säker ställa att den inte gå ut
+            Items newItem = new Items(item.Item, item.LocationX, item.LocationY, item.Health);
+            Console.SetCursorPosition(item.LocationX, item.LocationY);
+            List<Items> newItems = new List<Items> { newItem };
+            AddItems(newItems);
         }
     }
+}
     public bool IsDead()
     {
-        if(this.Vitality ==0)
+        if(this.Vitality <=0)
         {
             Console.Clear();
             Console.WriteLine("GAME OVER");
@@ -162,12 +230,11 @@ public class Player : Characters
     {
         Console.Clear();
         YPosition=9;
-        this.XPositions= 6;
+        this.XPositions= 10;
         this.Vitality= 10;
         this.XpPoints=0;
         UpdateLocation();
         IsDead();
-        
     }
     //to make the player coolness change,so what we need to do is 
     //create a new list this list should the player (user) choose from 

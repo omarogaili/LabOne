@@ -8,6 +8,8 @@ internal class Program
     
     private static void Main(string[] args)
     {
+        
+       
         // EasyMob mob= new EasyMob("👽",10 ,10, 12, mechanism);
         List<User> mylist = new List<User>();//a list from the user class, because i need the users
         Console.Write("Regestera dig här: ");
@@ -17,13 +19,16 @@ internal class Program
         ConsoleKeyInfo keyInfo;// we'll use it for the switch statement by using the Key prop
         string? interactive = "☑️   \u001b[32m";
         (int left, int top) = Console.GetCursorPosition();
-        Player player= new Player ("",2,4,10,10);
+        Map gameMap = new Map();
+        Player player= new Player ("",2,10,50,10,gameMap);
         Mechanism mechanism= new Mechanism("💀", player);
-        Mobs mobs= new Mobs("👽", 10, 10, 12,player,mechanism);
+        Mobs mobs= new Mobs("👽", 10, 10, 12,player,mechanism,gameMap);
         bool confimexit=false; 
         
+       
         do 
-        {
+        { 
+            
             Console.SetCursorPosition(left, top);
             //showing the choosing one with an if statement
             Console.WriteLine($"{(option == 1 ? interactive : "    ")}Play\u001b[0m");
@@ -42,7 +47,10 @@ internal class Program
                     isSelected = true;
                     if (option == 1)
                     {
-                        PlayGame(player,mechanism, mobs, left, top,confimexit);
+                        Console.Clear();
+                        gameMap.Draw(player);
+                        PlayGame(player,mechanism, mobs, left, top,confimexit,gameMap); 
+                        
                     
                         if(player.IsDead())
                         {
@@ -103,7 +111,7 @@ internal class Program
             Console.WriteLine(users[i].userName + " ID : " + users[i].userId);
         }
     }
-    static void PlayGame( Player player, Mechanism mechanism, Mobs mobs, int left , int top, bool confimexit)
+    static void PlayGame(Player player, Mechanism mechanism, Mobs mobs, int left , int top, bool confimexit, Map gameMap)
     {
         bool isGameRunning = true;
         player.AddItems(new List<Items>
@@ -114,44 +122,46 @@ internal class Program
                             });
         mobs.AddMobs(new List<EasyMob>
                             {
-                                new EasyMob("🦹", 10, 35,12,10,10),
-                                new EasyMob("👻", 15, 27,5, 10,1),
-                                new EasyMob("👿", 12, 20, 10, 10,1)
+                                new EasyMob("🦹", 10, 9,12,10,10),
+                                new EasyMob("👻", 15, 5,5, 10,1),
+                                new EasyMob("👿", 8, 10, 10, 10,1)
                             });
         mobs.AddMediumMobs(new List<MediumMobs>
                             {
-                                new MediumMobs("👹", 10, 35,12,10,10),
-                                new MediumMobs("👺", 15, 27,5, 10,1),
-                                new MediumMobs("👾", 12, 20, 10, 10,1)
+                                new MediumMobs("👹", 10, 5,12,10,10),
+                                new MediumMobs("👺", 15, 7,5, 10,1),
+                                new MediumMobs("👾", 6, 10, 10, 10,1)
                             });
         player.RangeUp();
         do
         {
-            Tree tree1 = new Tree("*", ConsoleColor.Red, 80, 12);
-            tree1.MakeingNature();
+           
+            // Tree tree1 = new Tree("*", ConsoleColor.Red, 80, 12);
+            // tree1.MakeingNature();
             player.PlayerPropertyes();
             player.ShowingTheItems();
             mobs.ShowingTheCreatures();
             mobs.ShowingTheMediumMobs();
-            mobs.RemovingMobs();
-            mobs.RemovingMediumMobs();
-            player.RemovingItems();
+            mobs.RemovingMobs(gameMap);
+            mobs.RemovingMediumMobs(gameMap);
+            player.RemovingItems(gameMap);
+            
             var key = Console.ReadKey(true).Key;
             if (key == ConsoleKey.LeftArrow || key == ConsoleKey.A)
             {
-                player.MoveLeft();
+                player.MoveLeft(gameMap);
             }
             else if (key == ConsoleKey.RightArrow || key == ConsoleKey.D)
             {
-                player.MoveRight();
+                player.MoveRight(gameMap);
             }
             else if (key == ConsoleKey.UpArrow || key == ConsoleKey.W)
             {
-                player.MoveUp();
+                player.MoveUp(gameMap);
             }
             else if (key == ConsoleKey.DownArrow || key == ConsoleKey.S)
             {
-                player.MoveDown();
+                player.MoveDown(gameMap);
             }
             else if (key == ConsoleKey.Escape)
             {

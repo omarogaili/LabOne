@@ -3,7 +3,7 @@
 in this class we'll save all the properties that should all the creatures have in this game
 we'll have some rolls that we will use them latter for different creature types. 
 */
-public abstract class Characters
+public abstract class Characters : Map
 {
     string name ="";
     int strength;
@@ -24,16 +24,16 @@ public abstract class Characters
     ,int stamina,int charisma,int talkativeness,int speed,int wisdom,int rationality )
     {
         this.Name =  name;
-        this.Charisma = GivingAValue(charisma);
-        this.Coolness = GivingAValue(coolness);
-        this.Patience = GivingAValue(patience);
-        this.Rationality =GivingAValue(rationality);
-        this.Speed = GivingAValue(speed);
-        this.stamina = GivingAValue(speed);
-        this.Strength = GivingAValue(strength);
-        this.Talkativeness = GivingAValue(talkativeness);
-        this.Wisdom = GivingAValue(wisdom);
-        this.Vitality = GivingAValue(vitality);
+        this.Charisma = charisma;
+        this.Coolness = coolness;
+        this.Patience =patience;
+        this.Rationality =rationality;
+        this.Speed = speed;
+        this.stamina = speed;
+        this.Strength = strength;
+        this.Talkativeness = talkativeness;
+        this.Wisdom =wisdom;
+        this.Vitality = vitality;
     }
      public string Name
     {
@@ -96,24 +96,24 @@ public abstract class Characters
     // the method should look like this:
 
     //move it to monster classes 
-    public int GivingAValue(int theValue) 
-    {
-        int minValue= 1; // the min value 
-        int maxValue= 10; // there is the max value
-        //what we can do with those tow values is to get them grow 
-        // maybe with another condition but its about the fight not
-        // so i don't know how to handle this case. 
-        if(theValue < minValue) // condition for the min value
-        {
-            theValue = minValue;
+    // public int GivingAValue(int theValue) 
+    // {
+    //     int minValue= 1; // the min value 
+    //     int maxValue= 10; // there is the max value
+    //     //what we can do with those tow values is to get them grow 
+    //     // maybe with another condition but its about the fight not
+    //     // so i don't know how to handle this case. 
+    //     if(theValue < minValue) // condition for the min value
+    //     {
+    //         theValue = minValue;
             
-        }
-        else if(theValue > maxValue)
-        {
-            theValue = maxValue;
-        }
-        return theValue;
-    }
+    //     }
+    //     else if(theValue > maxValue)
+    //     {
+    //         theValue = maxValue;
+    //     }
+    //     return theValue;
+    // }
        public abstract void ShowingTheCreatures();
        public abstract void ShowingTheMediumMobs();
 }

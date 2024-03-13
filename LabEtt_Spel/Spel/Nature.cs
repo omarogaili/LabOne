@@ -30,7 +30,7 @@ public abstract class Nature
     public abstract void DrawShape(string shape);
     public void AddTree()
     {
-        Tree tree = new Tree(shape, prevcolor, 10, 2);
+        Tree tree = new Tree(shape, prevcolor, 50, 40);
         tree.DrawShape(shape);
     }
     public abstract void MakeingNature();
