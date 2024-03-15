@@ -6,17 +6,15 @@ public class Mechanism
     private int xPosition;
     private int yPosition;
     private Player player;
-
-    private EasyMob easymob;
-
-    private MediumMobs mediumMobs;
+    private Map map;
     //constructor 
-    public Mechanism(string fire, Player player)
+    public Mechanism(string fire, Player player, Map map)
     {
         this.Fire = fire;
         this.PostionX = player.XPositions;
         this.PostionY = player.YPosition;
         this.player = player;
+        this.map = map;
     }
     public string Fire
     {
@@ -59,6 +57,9 @@ public class Mechanism
                 {
                     break;
                 }
+                if(this.PostionX <0 || this.PostionX >= map.MapWidth){
+                    break;
+                }
         }
         UpdateLocation();
           while (key == ConsoleKey.B )
@@ -71,6 +72,9 @@ public class Mechanism
                 {
                     break;
                 }
+                 if(this.PostionX <0 || this.PostionX >= map.MapWidth){
+                    break;
+                }
         }
         UpdateLocation();
     }
@@ -79,7 +83,8 @@ public class Mechanism
         /* what this method do is to update the location, so that we don't get to zero after the loop is over
         we update the location so we start over. 
         */
-        Console.Clear();
+        // Console.Clear();
+        map.Draw(player);
         this.PostionX=player.XPositions;
         this.PostionY=player.YPosition;
         Console.SetCursorPosition(PostionX, PostionY);

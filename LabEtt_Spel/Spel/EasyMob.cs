@@ -10,13 +10,15 @@ public class EasyMob
     private int health;
     private int xpPoints;
     private int damage;
-    public EasyMob(string easymob, int x, int y, int health, int xpPoints, int damage){
+    int vitality;
+    public EasyMob(string easymob, int x, int y, int health, int xpPoints, int damage, int vitality){
         this.easymob = easymob;
         this.EasyMobsX= x;
         this.EasyMobsY= y;
         this.Health= health;
         this.XpPoints= xpPoints;
         this.Damage = damage;
+        this.vitality= vitality;
         /* add more prop if we want to, more items*/
     }
     public string Easymob{
@@ -45,6 +47,10 @@ public class EasyMob
        {
         get{return damage;}
         set{damage=value; }
+       }
+       public int Vitality{
+        get{return vitality;}
+        set{vitality=value; }
        }
 //  public int XPositions { get; set; }
 //     public int YPosition { get; set; }

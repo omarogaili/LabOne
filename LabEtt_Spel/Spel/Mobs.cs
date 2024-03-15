@@ -6,16 +6,16 @@ public class Mobs : Characters
 {
     Player player;
     Mechanism mechanism;
-    private int x;
-    private int y;
+    private int X {get; set;}
+    private int Y {get;set;}
     List<EasyMob> easymob = new List<EasyMob>();
     private Map map;
 
     List <MediumMobs> mediumMobs = new List<MediumMobs>();
     Random rand = new Random();
 
-    public Mobs(string name, int vitality, int x, int y,Player player, Mechanism mechanism,Map map ) 
-    : base(name, 1, vitality, 2, 3, 4, 5, 6, 7, 8, 9)
+    public Mobs(string name,int strength, int vitality, int stamina, int x, int y,Player player, Mechanism mechanism,Map map ) 
+    : base(name,strength,vitality,stamina)
     {
         name = "👽"; //this the shape i want. 
         this.Name = name;
@@ -27,16 +27,6 @@ public class Mobs : Characters
         this.player= player;
         this.mechanism= mechanism;
         this.map= map;
-    }
-public int X
-    {
-        get { return x; }
-        set { x = value; }
-    }
-    public int Y
-    {
-        get { return y; }
-        set { y = value; }
     }
       public void AddMobs(List<EasyMob> newEasymob)
     {
@@ -64,25 +54,41 @@ public int X
             Console.WriteLine(mediumMob.MediumMob);
         }
     }
-    public void GetSomeDamage()
+// public int GetSomeDamage()
+// {
+//     foreach (EasyMob mob in easymob)
+//     {
+//         if (player.XPositions == mob.EasyMobsX && player.YPosition == mob.EasyMobsY)
+//         {
+//              // Beräkna skadan som minsta av spelarens hälsa och fiendens skada
+//             player.Vitality -= mob.Damage; // Dra av skadan från spelarens hälsa
+//         }
+//     }
+//     return player.Vitality;
+    
+// }
+public int GetSomeDamage()
 {
     foreach (EasyMob mob in easymob)
     {
         if (player.XPositions == mob.EasyMobsX && player.YPosition == mob.EasyMobsY)
         {
-            if (player.Vitality <= mob.Damage)
+            // Beräkna skadan som minsta av spelarens hälsa och fiendens skada
+            int damageTaken = Math.Min(player.Vitality, mob.Damage);
+            player.Vitality -= damageTaken; // Dra av skadan från spelarens hälsa
+
+            if (player.Vitality <= 0)
             {
+                // Om spelarens hälsa blir noll eller mindre, avsluta spelet
                 player.Vitality = 0;
+                return player.Vitality; // Returnera den nya hälsan
             }
-            else
-            {
-                player.Vitality -= mob.Damage; 
-            }
-            /*add more prop lik coolness and strength */
-            /*the same logic we should use if the player ben hit or moved ner by the anime */
         }
     }
+    return player.Vitality;
 }
+
+
 
     public void GetSomeDamageFromMediumMobs(){
         foreach (MediumMobs mob in mediumMobs)
@@ -96,25 +102,6 @@ public int X
         }
     }
 
-//    public void RemovingMobs(Map map)
-//     {
-//         for (int i =easymob.Count -1; i>=0; i--){
-//             EasyMob easyMob = easymob[i];
-//             if(mechanism.PostionX>= easyMob.EasyMobsX  &&  mechanism.PostionY ==easyMob.EasyMobsY 
-//             || player.XPositions == easyMob.EasyMobsX && player.YPosition == easyMob.EasyMobsY){
-//                 GetSomeDamage();
-//                 easymob.RemoveAt(i);
-//                 player.XpPoints += easyMob.XpPoints;
-//                 easyMob.EasyMobsX = rand.Next(map.Width -6);
-//                 easyMob.EasyMobsY = rand.Next(map.Height-5);                 
-//                 EasyMob newEasyMob = new EasyMob(easyMob.Easymob, easyMob.EasyMobsX, easyMob.EasyMobsY, 
-//                 easyMob.Health, easyMob.XpPoints, easyMob.Damage);
-//                 Console.SetCursorPosition(easyMob.EasyMobsX, easyMob.EasyMobsY);
-//                 List<EasyMob> newEasymob = new List<EasyMob> { easyMob };
-//                 AddMobs(newEasymob);
-//             }
-//         }
-//     }
 public void RemovingMobs(Map map)
 {
     for (int i = easymob.Count - 1; i >= 0; i--)
@@ -123,7 +110,8 @@ public void RemovingMobs(Map map)
         if (mechanism.PostionX >= easyMob.EasyMobsX && mechanism.PostionY == easyMob.EasyMobsY
             || player.XPositions == easyMob.EasyMobsX && player.YPosition == easyMob.EasyMobsY)
         {
-            GetSomeDamage();
+            player.Vitality -= easyMob.Damage;
+            player.Vitality= GetSomeDamage();
             easymob.RemoveAt(i);
             player.XpPoints += easyMob.XpPoints;
 
@@ -132,7 +120,7 @@ public void RemovingMobs(Map map)
             easyMob.EasyMobsY = rand.Next(1, map.Height - 5);
 
             EasyMob newEasyMob = new EasyMob(easyMob.Easymob, easyMob.EasyMobsX, easyMob.EasyMobsY,
-                easyMob.Health, easyMob.XpPoints, easyMob.Damage);
+                easyMob.Health, easyMob.XpPoints, easyMob.Damage, easyMob.Vitality);
             Console.SetCursorPosition(easyMob.EasyMobsX, easyMob.EasyMobsY);
             List<EasyMob> newEasymob = new List<EasyMob> { easyMob };
             AddMobs(newEasymob);

@@ -8,7 +8,6 @@ public class Map
     public readonly int Width = +60 ;
     public readonly int Height = +30;
     public string[,] tiles;
-    private Player player;
     
 
     public Map()
