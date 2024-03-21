@@ -2,35 +2,41 @@
 
 namespace Spel;
 
-public class Items
+public abstract class Items
 {
-    private string item;
+    private string? item;
+    private double weight ;
+    private double values;
     private int x;
     private int y;
-    private int health;
     //  Random rand =new Random();
 
-    public Items(string item, int x, int y, int health){
+    public Items(string item,double weight,double values , int x, int y){
         this.Item= item;
+        this.Weight= weight;
+        this.Values= values;
         this.LocationX= x;
         this.LocationY= y;
-        this.Health= health;
         /* add more prop if we want to, more items*/
     }
     public string Item{
         get{return item;}
         set{item=value;}
     }
-    public int LocationX{
+    public double Weight{
+        get{return weight;}
+        set{weight=value;}
+    }
+    public double Values{
+        get{return values;}
+        set{values=value;}
+    }
+    public  int LocationX{
         get{return x;}
         set{x=value;}
     }
-    public int LocationY{
+    public  int LocationY{
         get{return y;}
         set{y=value; }
-    }
-       public int Health{
-        get{return health;}
-        set{health=value; }
     }
 }
