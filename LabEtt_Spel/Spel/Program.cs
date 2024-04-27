@@ -5,12 +5,10 @@ using Spel;
 
 internal class Program
 {
+    /* Vi tänkte ha en highscore list men omständigheter gjorde att vi hann inte med detta */
     
     private static void Main(string[] args)
     {
-        
-       
-        // EasyMob mob= new EasyMob("👽",10 ,10, 12, mechanism);
         List<User> mylist = new List<User>();//a list from the user class, because i need the users
         List<Score> scores = new List<Score>();
         Console.Write("Regestera dig här: ");
@@ -18,13 +16,15 @@ internal class Program
         bool isSelected = false; //bool to control the loop 
         int option = 1; // to check the options we'll have 3 options
         ConsoleKeyInfo keyInfo;// we'll use it for the switch statement by using the Key prop
-        string? interactive = "☑️   \u001b[32m";
+        string? interactive = "[V]   \u001b[32m";
         (int left, int top) = Console.GetCursorPosition();
         Map gameMap = new Map();
         Player player= new Player ("",1,2,1,10,50,10,gameMap);
-        Mechanism mechanism= new Mechanism("💀", player, gameMap);
-        Mobs mobs= new Mobs("",1,2,1,10,15,player, mechanism,gameMap);
-        bool confimexit=false; 
+        Mechanism mechanism= new Mechanism("F", player, gameMap);
+        EasyMob mobs= new EasyMob("",1,5,1,10,15,gameMap, player);
+        MediumMobs mediumMobs = new MediumMobs("", 1, 5, 1, 20, 9, gameMap, player);
+
+        bool confimexit =false; 
         
        
         do 
@@ -52,7 +52,7 @@ internal class Program
                         Console.SetCursorPosition(left, top);
                         Console.Write("[I]nventory");
                         gameMap.Draw(player);
-                        PlayGame(player,mechanism, mobs, left, top,confimexit,gameMap); 
+                        PlayGame(player,mechanism, mobs, mediumMobs, left, top,confimexit,gameMap); 
                         
                     
                         if(player.IsDead())
@@ -124,36 +124,24 @@ internal class Program
     vi ha en bool variable isGameRunning som vi använder för att kontrollera om spelt körs eller int
     för att stoppa loppen. 
     */
-    static void PlayGame(Player player, Mechanism mechanism, Mobs mobs, int left , int top, bool confimexit, Map gameMap)
+    static void PlayGame(Player player, Mechanism mechanism, EasyMob mobs,MediumMobs mediumMobs,int left , int top, bool confimexit, Map gameMap)
     {
         bool isGameRunning = true;
         bool showInventory = false;
         player.AddItems(new List<HealthItems>
                             {
-                                new HealthItems("🌯", 1, 0,10,20,1),
-                                new HealthItems("🦐", 1, 0,15,10,2),
-                                new HealthItems("🍺", 1, 0, 12,13,5)
+                                new HealthItems("H", 1, 0,10,20,1),
+                                new HealthItems("H", 1, 0,15,10,2),
+                                new HealthItems("H", 1, 0, 12,13,5)
                             });
         player.AddWeapon(
             new List <WeaponItem>{
-                new WeaponItem("⚔️",20,40,10,15,10),
-                new WeaponItem("p",20,40,6,12,10)
+                new WeaponItem("W",20,40,10,15,10),
+                new WeaponItem("W",20,40,6,12,10)
             }
         );
-        
-        mobs.AddMobs(new List<EasyMob>
-                            {
-                                new EasyMob("🦹", 10, 9,12,10,10,1),
-                                new EasyMob("👻", 15, 5,5, 10,1,1),
-                                new EasyMob("👿", 8, 10, 10, 10,1,1)
-                            });
-        mobs.AddMediumMobs(new List<MediumMobs>
-                            {
-                                new MediumMobs("👹", 10, 5,12,10,10),
-                                new MediumMobs("👺", 15, 7,5, 10,1),
-                                new MediumMobs("👾", 6, 10, 10, 10,1)
-                            });
-        // player.RangeUp();
+         mobs = new EasyMob("M", 1, 5, 1, 50, 70, gameMap, player);
+         mediumMobs = new MediumMobs("ME", 1, 5, 1, 20, 9, gameMap, player);
         do
         {
            
@@ -162,9 +150,7 @@ internal class Program
             player.PlayerPropertyes(mobs);
             player.ShowingTheItems();
             mobs.ShowingTheCreatures();
-            mobs.ShowingTheMediumMobs();
-            mobs.RemovingMobs(gameMap);
-            mobs.RemovingMediumMobs(gameMap);
+            mediumMobs.ShowingTheCreatures();
             player.RemovingItems(gameMap);
             player.RemovingWeapon(gameMap);
             player.ShowingTheWeapons();
@@ -209,7 +195,6 @@ internal class Program
                 player.PlayerPropertyes(mobs); 
                 player.ShowingTheItems(); 
                 mobs.ShowingTheCreatures(); 
-                mobs.ShowingTheMediumMobs(); 
                 }
                 else if(confimexit)
                 {
@@ -241,7 +226,7 @@ internal class Program
 {
     Console.Clear();
     ConsoleKeyInfo escKey;
-    string symbolToChoice = "☑️   \u001b[32m";
+    string symbolToChoice = "[V]   \u001b[32m";
     int choice = 1;
     Console.WriteLine("Are you sure you want to leave the game?");
         do

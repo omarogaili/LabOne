@@ -57,7 +57,7 @@ public class Mechanism
                 {
                     break;
                 }
-                if(this.PostionX <0 || this.PostionX >= map.MapWidth){
+                if(this.PostionX <0 || this.PostionX >= map.Width){
                     break;
                 }
         }
@@ -72,7 +72,7 @@ public class Mechanism
                 {
                     break;
                 }
-                 if(this.PostionX <0 || this.PostionX >= map.MapWidth){
+                 if(this.PostionX <0 || this.PostionX >= map.Width){
                     break;
                 }
         }

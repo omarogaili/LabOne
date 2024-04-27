@@ -4,25 +4,24 @@ using System.IO.Compression;
 using System.Threading.Tasks.Dataflow;
 
 namespace Spel;
-
+/// <summary>
+/// den klassen är har allt som berör spelaren. rörelse metoder, items liksom hälsa och vapen samt hur spelaren skjuter fiender
+/// </summary>
 public class Player : Characters
 {
     private List<HealthItems> items = new List<HealthItems>();
     private List<WeaponItem> weapons = new List<WeaponItem>(4); // Changed to List<WeaponItem>    private Mechanism mechanism;
     Map map = new Map();
     private Random rand = new Random();
-    public int XPositions { get; set; }
-    public int YPosition { get; set; }
-    public int XpPoints { get; set; }
-    int initialX;
-    int initialY;
-    int initialHealth;
+    public int XPositions { get; set; } // spelaren plats i X axel
+    public int YPosition { get; set; } // spelaren plats i Y axel
+    public int XpPoints { get; set; } // XP points
 
     //constructor for the class player from 
     public Player(string shape, int strength, int vitality, int stamina, int xpPoints, int postionX, int postionY, Map map)
     : base(shape, strength, vitality, stamina)
     {
-        shape = "🤺"; //this the shape i want. 
+        shape = "P"; //this the shape i want. 
         this.Name = shape;
         this.Vitality = vitality;
         this.XPositions = postionX;
@@ -31,15 +30,14 @@ public class Player : Characters
         this.map = map;
         // mechanism = new Mechanism ( XPositions +2, YPosition);
     }
+    // den metodden ansvarig för att skriva ut spelaren 
     public override void ShowingTheCreatures()
     {
         Console.WriteLine(this.Name + this.Vitality);
     }
-
-    public override void ShowingTheMediumMobs()
-    {
-        Console.WriteLine(this.Name + this.Vitality);
-    }
+    // den metoden ansvarig för att skriva mobs
+    //rörelse metoder neddan,
+    // det som jag gör är att jag kontrollerar spelaren position och sedan sätter jag en CursorPosition och minska sedan X platsen 
     public void MoveLeft(Map map)
     {
         if (XPositions > 1)
@@ -56,10 +54,10 @@ public class Player : Characters
             Console.Write(Name);
         }
     }
-
+    // fungerar påsamma sätt som metoden övan men jag gav - 4 från map breed för att sätta gräns så att inte spelaren röra sig utanför map
     public void MoveRight(Map map)
     {
-        if (XPositions < map.MapWidth - 4)
+        if (XPositions < map.Width - 4)
         {
             // Clear the player's current position on the console
             Console.SetCursorPosition(XPositions, YPosition);
@@ -76,40 +74,37 @@ public class Player : Characters
     {
         if (YPosition > 1)
         {
-            // Clear the player's current position on the console
             Console.SetCursorPosition(XPositions, YPosition);
-            Console.Write(' '); // ' ' represents an empty tile
-                                // Update the player's position
+            Console.Write(' '); 
             YPosition--;
-            // Update the player's position on the console
             Console.SetCursorPosition(XPositions, YPosition);
             Console.Write(Name);
         }
     }
     public void MoveDown(Map map)
     {
-        if (YPosition < map.MapHeight - 2)
+        if (YPosition < map.Height - 2)
         {
-            // Clear the player's current position on the console
             Console.SetCursorPosition(XPositions, YPosition);
-            Console.Write(' '); // ' ' represents an empty tile
+            Console.Write(' '); 
 
-            // Update the player's position
             YPosition++;
-
-            // Update the player's position on the console
             Console.SetCursorPosition(XPositions, YPosition);
             Console.Write(Name);
         }
     }
+    // den metoden är ansvarig för att updatera spelarens plats.
     private void UpdateLocation()
     {
         Console.Clear();
         Console.SetCursorPosition(XPositions, YPosition);
-        Console.Write(Name);
-        Communication();
+        Communication(map);
     }
-    private void Communication()
+    //meningen med den metoden är att spelaren ska kunna prata när den röra sig, men eftersom vi har fixat en map och så ligger den under map, 
+    // metoden kontrollerar spelarens x och y position och sedan har jag skapat en lista av olika strings för att de ska visas i skärmen för varje gång
+    //spelaren röra på sig samt en random för att en random text ska visas i skärmen. 
+    // jag justerar text position där Console.SetCursorPosition(xaxis, yaxis - 12); för att texten ska visas ovanför spelaren. 
+    private void Communication(Map map)
     {
         int xaxis = XPositions;
         int yaxis = YPosition + 10;
@@ -117,7 +112,6 @@ public class Player : Characters
             "I'll Wack you up",
             "Are you sure about that",
             "Welcome to me World!",
-            "Jag heter Albin HINCZ"
             };
         Random randChat = new Random();
         int index = randChat.Next(speech.Count);
@@ -125,6 +119,10 @@ public class Player : Characters
         Console.SetCursorPosition(xaxis, yaxis - 12);
         Console.WriteLine(chatting);
     }
+    /// <summary>
+    /// spelarens egenskaper liksom XP och hälsa för att spelaren ska hålla sig updaterad om sin egenskaper 
+    /// </summary>
+    /// <param name="mobs"> jag skickar in klassen mobs för att dessa egenskaper blir påverkade av fiendenerna </param>
     public void PlayerPropertyes(Mobs mobs)
     {
         int xaxis = Console.WindowWidth - 20;
@@ -134,6 +132,10 @@ public class Player : Characters
         
         
     }
+    /// <summary>
+    /// skapar en lisa av Vapen som soelaren kan tar upp och sedan lägga till de i inventroy metoden 
+    /// </summary>
+    /// <param name="weapon">Vapen lista från Vapen klassen</param>
     public void AddWeapon(List<WeaponItem> weapon)
     {
         weapons.AddRange(weapon);

@@ -3,7 +3,7 @@
 in this class we'll save all the properties that should all the creatures have in this game
 we'll have some rolls that we will use them latter for different creature types. 
 */
-public abstract class Characters : Map
+public abstract class Characters 
 {
     /* vi behöver inte ha alla dessa egenskaper men vi tänkte att vi ska kunna använda de senare 
     om vi vill jobba vidare med spelet */
@@ -18,8 +18,8 @@ public abstract class Characters : Map
     int speed;
     int wisdom;
     int rationality;
-    int x;
-    int y;
+    public int x;
+   public int y;
     public Characters (string name ,int strength, int vitality
     ,int stamina)
     {
@@ -95,7 +95,6 @@ public abstract class Characters : Map
     // max result and the min result grow with one point 
     // the method should look like this:
        public abstract void ShowingTheCreatures();
-       public abstract void ShowingTheMediumMobs();
 }
 
 
