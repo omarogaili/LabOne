@@ -1,30 +1,11 @@
-﻿//using System.Security.Cryptography.X509Certificates;
-
-//namespace Spel;
-//public class EasyMob : Mobs
-//{
-//    public EasyMob(string name, int strength, int vitality, int stamina, int x, int y, Map map, Player player)
-//        : base(name, strength, vitality, stamina, x, y, map, player)
-//    {
-//    }
-//    public override void ShowingTheCreatures()
-//    {
-//        Console.WriteLine(this.Name + this.Vitality);
-//    }
-
-//    public override void UpdateLocation()
-//    {
-//        if (player.XPositions == X && player.YPosition == Y)
-//        {
-//            GetNewLocation();
-//        }
-//    }
-//}
+﻿
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 
 namespace Spel
-{
+{ /// <summary>
+///  den klassen ska ärva från Mobs som ärver från Characters. 
+/// </summary>
     public class EasyMob : Mobs
     {
         public EasyMob(string name, int strength, int vitality, int stamina, int x, int y, Map map, Player player)
@@ -33,21 +14,24 @@ namespace Spel
         }
         public bool IsDead { get; private set; } = false;
 
-        public override void ShowingTheCreatures()
+        public override void ShowingTheCreatures(Map map)
         {
-            Console.WriteLine(this.Name + this.Vitality);
+            Console.SetCursorPosition(this.x, this.y);
+            Console.WriteLine(this.Name);
+            UpdateLocation(map);
         }
 
-        public override void UpdateLocation()
+        public override void UpdateLocation(Map map)
         {
             if (player.XPositions == X && player.YPosition == Y)
             {
-                GetNewLocation();
+                GetNewLocation(map);
             }
         }
         public void Dead()
         {
            IsDead = true;
         }
+
     }
 }

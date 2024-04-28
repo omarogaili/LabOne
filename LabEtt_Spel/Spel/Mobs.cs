@@ -1,7 +1,10 @@
 ﻿// using Microsoft.IdentityModel.Tokens;
 
 namespace Spel;
-
+/// <summary>
+/// abstract klass egentligen för att den ska ärva till fienderna olika typer av fienderna vi vill ha 
+///  Den klassen är ansvarig för fienderna och den ha en abstract metod den ska vara ansvarig för uppdatera platsen 
+/// </summary>
 public abstract class Mobs : Characters
 {
     protected Map map;
@@ -29,10 +32,9 @@ public abstract class Mobs : Characters
         set { y = value; }
     }
 
-    //public abstract void Draw();
-    public abstract void UpdateLocation();
+    public abstract void UpdateLocation(Map map);
 
-    public void GetNewLocation()
+    public void GetNewLocation(Map map)
     {
         X = rand.Next(1, map.Width - 1);
         Y = rand.Next(1, map.Height - 1);

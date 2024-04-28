@@ -94,7 +94,7 @@ public abstract class Characters
     //or a value we kan also do that after every time you win a fight the 
     // max result and the min result grow with one point 
     // the method should look like this:
-       public abstract void ShowingTheCreatures();
+       public abstract void ShowingTheCreatures(Map map);
 }
 
 

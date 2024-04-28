@@ -31,7 +31,7 @@ public class Player : Characters
         // mechanism = new Mechanism ( XPositions +2, YPosition);
     }
     // den metodden ansvarig för att skriva ut spelaren 
-    public override void ShowingTheCreatures()
+    public override void ShowingTheCreatures(Map map)
     {
         Console.WriteLine(this.Name + this.Vitality);
     }

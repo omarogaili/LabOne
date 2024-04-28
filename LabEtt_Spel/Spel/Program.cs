@@ -128,6 +128,8 @@ internal class Program
     {
         bool isGameRunning = true;
         bool showInventory = false;
+        mobs = new EasyMob("M", 1, 5, 1, 4, 12, gameMap, player);
+        mediumMobs = new MediumMobs("ME", 1, 5, 1, 8, 19, gameMap, player);
         player.AddItems(new List<HealthItems>
                             {
                                 new HealthItems("H", 1, 0,10,20,1),
@@ -140,8 +142,7 @@ internal class Program
                 new WeaponItem("W",20,40,6,12,10)
             }
         );
-         mobs = new EasyMob("M", 1, 5, 1, 50, 70, gameMap, player);
-         mediumMobs = new MediumMobs("ME", 1, 5, 1, 20, 9, gameMap, player);
+    
         do
         {
            
@@ -149,11 +150,11 @@ internal class Program
             // tree1.MakeingNature();
             player.PlayerPropertyes(mobs);
             player.ShowingTheItems();
-            mobs.ShowingTheCreatures();
-            mediumMobs.ShowingTheCreatures();
             player.RemovingItems(gameMap);
             player.RemovingWeapon(gameMap);
             player.ShowingTheWeapons();
+            mobs.ShowingTheCreatures(gameMap);
+            mediumMobs.ShowingTheCreatures(gameMap);
             
             var key = Console.ReadKey(true).Key;
             if (key == ConsoleKey.LeftArrow || key == ConsoleKey.A)
@@ -194,7 +195,8 @@ internal class Program
                 gameMap.Draw(player); 
                 player.PlayerPropertyes(mobs); 
                 player.ShowingTheItems(); 
-                mobs.ShowingTheCreatures(); 
+               
+
                 }
                 else if(confimexit)
                 {
